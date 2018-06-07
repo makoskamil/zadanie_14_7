@@ -4,24 +4,15 @@ var ContactForm = React.createClass({
     },
     render: function() {
         return (
-            React.createElement('form', {className: 'contactForm'},
-              React.createElement('input', {
-                type: 'text',
-                placeholder: 'Imię',
-                value: this.props.contact.firstName,
-              }),
-              React.createElement('input', {
-                type: 'text',
-                placeholder: 'Nazwisko',
-                value: this.props.contact.lastName,
-              }),
-              React.createElement('input', {
-                type: 'email',
-                placeholder: 'Email',
-                value: this.props.contact.email,
-            }),
-            React.createElement('button', {type: 'submit'}, "Dodaj Kontakt")
-            )
+			<form className = {'contact_form form-group'}>
+				<label htmlFor={'name'}>Imię: </label>
+				<input className={'form-control'} type = {'text'} id = {'name'} placeholder = {'Wpisz imię'} value = {this.props.contact.firstName}></input>
+				<label htmlFor={'surname'}> Nazwisko: </label>
+				<input className={'form-control'} type = {'text'} id = {'surname'} placeholder= {'Wpisz nazwisko'} value = {this.props.contact.lastName}></input>
+				<label htmlFor = {'email'}>Email:</label>
+				<input className = {'form-control'} type = {'text'} id = {'email'} placeholder = {'Wpisz e-mail'} value = {this.props.contact.email}></input>
+				<button	type = {'submit'} className = {'btn btn-primary'}>Dodaj kontakt</button>
+			</form> 
         )
     },
-})
+});
